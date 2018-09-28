@@ -20,7 +20,11 @@ APP_SUBDIR_PATH=$(cat $ENV_DIR/APP_SUBDIR_PATH)
 echo "APP_SUBDIR_PATH"
 echo $APP_SUBDIR_PATH
 
-[ ! "$APP_SUBDIR_PATH" ] && echo "APP_SUBDIR_PATH not set, exiting.."; exit 1;
+if [ -z "$APP_SUBDIR_PATH" ]
+then
+  echo "APP_SUBDIR_PATH not set, exiting.."
+  exit 1
+fi
 
 echo "-----> Adding subdir paths for '$APP_SUBDIR_PATH' to PATH variable.."
 
