@@ -6,7 +6,19 @@ BUILD_DIR=${1:-}
 CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
 
+echo "BUILD_DIR"
+echo $BUILD_DIR
+
+echo "CACHE_DIR"
+echo $CACHE_DIR
+
+echo "ENV_DIR"
+echo $ENV_DIR
+
 APP_SUBDIR_PATH=$(cat $ENV_DIR/APP_SUBDIR_PATH)
+
+echo "APP_SUBDIR_PATH"
+echo $APP_SUBDIR_PATH
 
 [ ! "$APP_SUBDIR_PATH" ] && echo "APP_SUBDIR_PATH not set, exiting.."; exit 1;
 

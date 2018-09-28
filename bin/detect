@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-echo "Running subdir-path-buildpack..."
+echo "subdir-path-buildpack"
 exit 0
