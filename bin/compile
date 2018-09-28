@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+### Configure directories
+
+BUILD_DIR=${1:-}
+CACHE_DIR=${2:-}
+ENV_DIR=${3:-}
+
+APP_SUBDIR_PATH=$(cat $ENV_DIR/APP_SUBDIR_PATH)
+
+[ ! "$APP_SUBDIR_PATH" ] && echo "APP_SUBDIR_PATH not set, exiting.."; exit 1;
+
+echo "-----> Adding subdir paths for '$APP_SUBDIR_PATH' to PATH variable.."
+
+export PATH="$PATH:$(echo $PATH | sed "s/app/app\/$APP_SUBDIR_PATH/g")"
+echo "PATH variable now contains:"
+echo $PATH
+echo "       Done!"
